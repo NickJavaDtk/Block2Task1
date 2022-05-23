@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.NoSuchElementException;
 import java.util.function.BooleanSupplier;
 
@@ -31,7 +32,7 @@ public class ArrayOneTest {
 
 
     @Test
-    public void checkValue() {
+    public void checkValueString() {
         String s = "12 end";
 
         String expected = "end";
@@ -39,6 +40,19 @@ public class ArrayOneTest {
 
 
         Assertions.assertEquals(expected, result);
+
+    }
+
+    @Test
+    public void checkValueInt() {
+        String s  = "-12 3";
+
+        int[] expected = {1, 3};
+        int[] result = ArrayOne.calculatingPurchase(s);
+        boolean b = Arrays.equals(expected, result);
+
+
+        Assertions.assertTrue(b);
 
     }
 }

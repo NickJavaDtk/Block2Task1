@@ -99,6 +99,5 @@ public class ArrayOne {
         return s1;
     }
 
-
 }
 
